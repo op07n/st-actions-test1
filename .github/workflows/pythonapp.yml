@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
@@ -22,3 +22,7 @@ jobs:
     - name: Test with pytest
       run: |
         pyinstaller streamlitWrapper.py
+    - uses: actions/upload-artifact@v1
+      with:
+        name: artifact
+        path: ./build
