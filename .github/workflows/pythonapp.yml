@@ -21,7 +21,7 @@ jobs:
         mv patch\cli.py c:\hostedtoolcache\windows\python\3.7.6\x64\lib\site-packages\streamlit -Force
     - name: Test with pytest
       run: |
-        pyinstaller streamlitWrapper.py
+        pyinstaller -F streamlitWrapper.spec
     - uses: actions/upload-artifact@v1
       with:
         name: artifact
